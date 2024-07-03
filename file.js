@@ -1,5 +1,5 @@
 /**
- * @description Logs the value `0` to the console.
+ * @description Logs a zero value to the console.
  */
 const fn = () => {
 
