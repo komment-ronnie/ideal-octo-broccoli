@@ -1,6 +1,5 @@
-const fn = () => {
+const gn = () => {
 
-  
   console.log(0);
 
 
