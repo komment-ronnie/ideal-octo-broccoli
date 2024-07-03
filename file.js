@@ -1,3 +1,6 @@
+/**
+ * @description Logs a zero value to the console.
+ */
 const fn = () => {
 
   
