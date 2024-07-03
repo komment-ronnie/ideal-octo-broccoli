@@ -1,7 +1,7 @@
 /**
  * @description Logs the value `0` to the console.
  */
-const gn = () => {
+const fn = () => {
 
   console.log(0);
 
