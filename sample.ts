@@ -1,35 +1,35 @@
 import React from 'react';
 /**
- * @description Defines two utility functions, `add` and `sin`, which perform arithmetic
- * operations on numbers. The component then calls these functions with specific
- * arguments to generate an array of results, which are displayed as a list of items
- * within a `<div>` element.
+ * @description Defines two custom functions, `add` and `sin`, for basic arithmetic
+ * and trigonometric operations. It then uses these functions to generate an array
+ * of results and renders them as a list within an HTML element.
  * 
- * @returns {number | number} 8 and approximately 1.5707963267948966.
+ * @returns {number} 8 (the sum of 5 and 3) for the first item in the results array
+ * and a floating point number near to 1 (the sine of π/2) for the second item.
  */
 const MathComponent: React.FC = () => {
     /**
-     * @description Takes two numeric parameters `a` and `b`, performs an arithmetic
-     * addition operation on them, and returns the result as a number. It allows combining
-     * two numerical values into one.
+     * @description Takes two numeric arguments, `a` and `b`, and returns their sum as
+     * an integer value. It is a simple arithmetic operation that combines the values of
+     * both inputs into a single output.
      * 
-     * @param {number} a - Used to represent an input value for addition.
+     * @param {number} a - Added to another number `b`.
      * 
-     * @param {number} b - Intended to be added to `a`.
+     * @param {number} b - Added to the value of `a`.
      * 
-     * @returns {number} The result of adding two input numbers together.
+     * @returns {number} The result of the arithmetic operation performed on its input values.
      */
     function add(a: number, b: number): number {
         return a + b;
     }
     /**
-     * @description Calculates the sine of a given angle `a` and returns the result as a
-     * numerical value. It utilizes the built-in `Math.sin` method to perform the
-     * calculation, taking the input `a` as an argument.
+     * @description Calculates and returns the sine of a given angle `a` in radians. The
+     * result is a numeric value between -1 and 1, representing the trigonometric sine operation.
      * 
-     * @param {number} a - An angle to be used for calculating sine.
+     * @param {number} a - An input angle for sine calculation.
      * 
-     * @returns {number} The sine of the given angle.
+     * @returns {number} The sine of the input angle `a`, represented as a mathematical
+     * constant in radians.
      */
     function sin(a: number): number {
         return Math.sin(a);

@@ -4,46 +4,49 @@
     "path": "file.js",
     "content": {
       "structured": {
-        "description": "Several utility functions: factorial calculation, primality check, temperature conversion between Celsius and Fahrenheit, finding the maximum element in an array, string manipulation (reversal and palindrome detection), generating random numbers, calculating circle area, and counting occurrences of each element in an array. The code demonstrates various programming concepts such as recursion, loops, conditional statements, object-oriented programming, and functional programming techniques like map and reduce methods.",
+        "description": "Various utility functions that perform arithmetic operations, mathematical calculations, data manipulation, and string processing. It includes implementations for calculating factorial, checking primality, converting Celsius to Fahrenheit, finding the maximum value in an array, reversing strings, determining palindromes, generating random numbers, calculating circle areas, counting occurrences of elements in arrays, and capitalizing words.",
         "items": [
           {
-            "id": "936cb707-cab8-c985-9846-761fa5c031c7",
+            "id": "094873af-8bc8-3bab-5744-91b286cb53e4",
             "ancestors": [],
-            "description": "Calculates the factorial of a given positive integer `n`, recursively multiplying it by `n-1` until reaching 0 or 1, at which point it returns 1. The result is the product of all positive integers up to and including `n`.",
+            "description": "Calculates the factorial of a given integer `n`. It does so by recursively multiplying `n` with the factorial of `n-1`, until it reaches the base case of `n === 0` or `n === 1`, at which point it returns 1.",
             "params": [
               {
                 "name": "n",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "Intended to calculate the factorial of this number."
+                "description": "An input value for calculating factorial."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "1 when n equals 0 or 1, and otherwise it returns a product of the input number n with the factorial of (n - 1)."
+              "description": "The product of all positive integers from 1 to n. If n is 0 or 1, it returns 1. For other values of n, it recursively calculates the factorial as a multiplication of n and the factorial of (n-1)."
             },
             "usage": {
               "language": "javascript",
-              "code": "var result = factorial(5);\n",
+              "code": "factorial(5);\n",
               "description": ""
             },
             "name": "factorial",
             "location": {
-              "start": 2,
+              "start": 13,
               "insert": 2,
               "offset": " ",
               "indent": 0,
-              "comment": null
+              "comment": {
+                "start": 1,
+                "end": 12
+              }
             },
             "item_type": "function",
             "length": 7,
-            "docLength": null
+            "docLength": 11
           },
           {
-            "id": "b54c3223-d850-8ba5-3945-cdcd349a8946",
+            "id": "a2ac5955-c2e1-1fb3-a047-78ea6929c3dc",
             "ancestors": [],
-            "description": "Determines whether a given number is prime or not. It returns `false` for numbers less than or equal to 1, and iterates from 2 up to the square root of the input number to check if it has any divisors other than 1 and itself.",
+            "description": "Determines whether a given integer is a prime number or not. It returns `false` if the input number is less than or equal to 1, and checks for divisibility up to the square root of the number. If no divisor is found, it returns `true`.",
             "params": [
               {
                 "name": "num",
@@ -55,54 +58,54 @@
             ],
             "returns": {
               "type_name": "boolean",
-              "description": "Either `true` if the input number is a prime number or `false` otherwise."
+              "description": "`true` if the input number is prime and `false` otherwise."
             },
             "usage": {
               "language": "javascript",
-              "code": "isPrime(23); // returns true\nisPrime(42); // returns false\n",
-              "description": ""
+              "code": "let result = isPrime(25);\n",
+              "description": "\n\nThis will check if the number 25 is a prime number or not."
             },
             "name": "isPrime",
             "location": {
-              "start": 19,
-              "insert": 9,
+              "start": 32,
+              "insert": 21,
               "offset": " ",
               "indent": 0,
               "comment": {
-                "start": 8,
-                "end": 18
+                "start": 20,
+                "end": 31
               }
             },
             "item_type": "function",
             "length": 7,
-            "docLength": 10
+            "docLength": 11
           },
           {
-            "id": "262dc49f-cc35-2290-8d4d-50c06efadbd4",
+            "id": "7f8a470c-43fa-8aa8-894a-b91bcab15ebd",
             "ancestors": [],
-            "description": "Converts a given Celsius temperature into Fahrenheit. It takes an input `celsius` and returns the equivalent Fahrenheit value by performing simple arithmetic operations: multiplying by 9, dividing by 5, and adding 32.",
+            "description": "Converts a temperature from Celsius to Fahrenheit by multiplying the input value by 9, dividing by 5, and then adding 32.",
             "params": [
               {
                 "name": "celsius",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "The temperature to be converted from Celsius."
+                "description": "Temperature value to be converted."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "9/5 times the input celsius temperature plus 32. This result represents the equivalent Fahrenheit temperature."
+              "description": "9 times the input celsius value divided by 5 and then added to 32. The result represents the temperature in Fahrenheit scale."
             },
             "usage": {
               "language": "javascript",
-              "code": "var temperature = celsiusToFahrenheit(30);\n",
-              "description": ""
+              "code": "var fahrenheit = celsiusToFahrenheit(30);\n",
+              "description": "\n"
             },
             "name": "celsiusToFahrenheit",
             "location": {
-              "start": 27,
-              "insert": 27,
+              "start": 40,
+              "insert": 40,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -112,36 +115,36 @@
             "docLength": null
           },
           {
-            "id": "888beb28-e2ff-9eb6-654a-2f1f6bb767aa",
+            "id": "1f003d26-00d6-04ad-2941-0f7ba1b0c913",
             "ancestors": [],
-            "description": "Identifies and returns the maximum value from a given array. It initializes the variable `max` with the first element of the array, then iterates through the remaining elements to update `max` if any element is greater.",
+            "description": "Determines the maximum value within an array of numbers by iterating through each element and comparing it with the current maximum value, updating the maximum if a larger value is found, until all elements have been checked.",
             "params": [
               {
                 "name": "arr",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number[]",
-                "description": "An array of numbers to find the maximum value from."
+                "description": "An array to be searched for maximum value."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "The largest element from a given array."
+              "description": "The maximum element present in the array."
             },
             "usage": {
               "language": "javascript",
-              "code": "let numbers = [5, 8, 2, 9];\nlet result = findMax(numbers);\n",
+              "code": "let numbers = [4, 2, 9, 6, 5];\nlet maxNumber = findMax(numbers);\n// maxNumber now holds the value 9",
               "description": ""
             },
             "name": "findMax",
             "location": {
-              "start": 40,
-              "insert": 31,
+              "start": 53,
+              "insert": 44,
               "offset": " ",
               "indent": 0,
               "comment": {
-                "start": 30,
-                "end": 39
+                "start": 43,
+                "end": 52
               }
             },
             "item_type": "function",
@@ -149,16 +152,16 @@
             "docLength": 9
           },
           {
-            "id": "aac94d43-21af-6f97-7946-ceda3cb811fd",
+            "id": "c5ee298e-ea69-bb83-c647-df28a9c2b4e1",
             "ancestors": [],
-            "description": "Splits a given string into an array of characters, reverses the order of these characters, and then joins them back together to form a new string with the original characters in reverse order.",
+            "description": "Takes a string as input and returns the reversed version of that string. It does this by splitting the input string into an array of individual characters, reversing the order of the characters in the array, and then joining the characters back together into a new string.",
             "params": [
               {
                 "name": "str",
                 "default_value": null,
                 "optional": false,
                 "type_name": "string",
-                "description": "Intended for string reversal."
+                "description": "Input to be reversed."
               }
             ],
             "returns": {
@@ -167,13 +170,13 @@
             },
             "usage": {
               "language": "javascript",
-              "code": "const reversedString = reverseString(\"Hello World\");\n",
+              "code": "var reversed = reverseString(\"Hello World\");\n",
               "description": ""
             },
             "name": "reverseString",
             "location": {
-              "start": 50,
-              "insert": 50,
+              "start": 63,
+              "insert": 63,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -183,31 +186,31 @@
             "docLength": null
           },
           {
-            "id": "98498aa2-5641-dcb9-2047-4981ca13cccb",
+            "id": "f437b9f0-b2f0-7aab-614a-05b6a3e25ed3",
             "ancestors": [],
-            "description": "Checks if a given string is a palindrome by comparing it with its reversed version, returned by the `reverseString` function. If both strings are identical, the function returns `true`, indicating that the input string is a palindrome. Otherwise, it returns `false`.",
+            "description": "Checks whether a given string is a palindrome by comparing it with its reversed version, which is obtained using the `reverseString` function. It returns a boolean value indicating whether the input string is a palindrome or not.",
             "params": [
               {
                 "name": "str",
                 "default_value": null,
                 "optional": false,
                 "type_name": "string",
-                "description": "Input to be checked for palindrome."
+                "description": "The input string to be checked for palindrome property."
               }
             ],
             "returns": {
               "type_name": "boolean",
-              "description": "True if the input string is a palindrome and false otherwise, indicating whether the string reads the same backward as forward."
+              "description": "True if the input string is equal to its reverse, and false otherwise."
             },
             "usage": {
               "language": "javascript",
-              "code": "isPalindrome(\"madam\"); \n",
+              "code": "isPalindrome(\"madam\"); // Returns true if \"madam\" is a palindrome, false otherwise.",
               "description": ""
             },
             "name": "isPalindrome",
             "location": {
-              "start": 54,
-              "insert": 54,
+              "start": 67,
+              "insert": 67,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -217,38 +220,38 @@
             "docLength": null
           },
           {
-            "id": "fe54c181-de04-3fa6-f34b-50edcd3607c2",
+            "id": "bc1628f1-1bbd-679d-d043-359407739bca",
             "ancestors": [],
-            "description": "Generates a random integer within a specified range defined by `min` and `max`. It calculates the random number using `Math.random()`, scales it to fit within the range, and then adds the minimum value to ensure inclusivity of both boundaries.",
+            "description": "Generates a random integer within a specified range defined by the input parameters `min` and `max`. The generated number is inclusive for both bounds, meaning it can equal either `min` or `max` with an equal probability.",
             "params": [
               {
                 "name": "min",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "The minimum value for random generation."
+                "description": "Inclusive in the generated random range."
               },
               {
                 "name": "max",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "Maximum value for generating random number."
+                "description": "1 more than the maximum possible random number value."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "A random integer within a range from `min` to `max` inclusive."
+              "description": "A random integer within the range of `min` and `max` inclusive."
             },
             "usage": {
               "language": "javascript",
-              "code": "var randomNum = getRandomNumber(1, 10);\n",
+              "code": "let random = getRandomNumber(1, 6);\nalert(random);\n",
               "description": ""
             },
             "name": "getRandomNumber",
             "location": {
-              "start": 58,
-              "insert": 58,
+              "start": 71,
+              "insert": 71,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -258,31 +261,31 @@
             "docLength": null
           },
           {
-            "id": "5a119b56-cf9a-019a-d941-593bec877c49",
+            "id": "a710b6d6-037c-d0bc-2144-e789784744c6",
             "ancestors": [],
-            "description": "Calculates the area of a circle given its radius, using the mathematical formula A = πr^2, where r is the radius and A is the area. The result is returned as a value to the caller.",
+            "description": "Calculates the area of a circle given its radius. It uses the mathematical formula for the area of a circle (πr^2) and returns the result as a value.",
             "params": [
               {
                 "name": "radius",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "Used to determine the circle's area."
+                "description": "Used to calculate the area of a circle."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "2πr where r is the radius of a circle and π is a mathematical constant approximately equal to 3.14159."
+              "description": "The area of a circle calculated using its radius."
             },
             "usage": {
               "language": "javascript",
-              "code": "let area = calculateCircleArea(5);\n",
+              "code": "const area = calculateCircleArea(5);\n",
               "description": ""
             },
             "name": "calculateCircleArea",
             "location": {
-              "start": 62,
-              "insert": 62,
+              "start": 75,
+              "insert": 75,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -292,86 +295,86 @@
             "docLength": null
           },
           {
-            "id": "c68453fc-8aa1-9c94-4d46-1cb4b3454f73",
+            "id": "421b407c-ba37-419c-e549-a0cb9be22261",
             "ancestors": [],
-            "description": "Takes an array as input and returns an object where each property is a unique element from the array, and its value is the number of times that element occurs in the array.",
+            "description": "Aggregates the occurrences of each element in an array by using the `reduce` method to create a new object with the elements as keys and their respective counts as values.",
             "params": [
               {
                 "name": "arr",
                 "default_value": null,
                 "optional": false,
-                "type_name": "(string | number | boolean | symbol | object | null | undefined)[]",
-                "description": "Intended to hold an array of values."
+                "type_name": "(string | number | boolean | object | symbol)[]",
+                "description": "An array to count occurrences in."
               }
             ],
             "returns": {
               "type_name": "any",
-              "description": "An object where keys are elements from the input array and values represent their occurrences in the array."
+              "description": "An object where each property represents a unique value from the input array and its corresponding property value is the number of occurrences of that value in the array."
             },
             "usage": {
               "language": "javascript",
-              "code": "const occurrences = countOccurrences([1, 2, 2, 3, 3, 3]);\n",
+              "code": "const occurrences = countOccurrences([1, 2, 3, 4, 2]);\n",
               "description": ""
             },
             "name": "countOccurrences",
             "location": {
-              "start": 77,
-              "insert": 66,
+              "start": 91,
+              "insert": 79,
               "offset": " ",
               "indent": 0,
               "comment": {
-                "start": 65,
-                "end": 76
+                "start": 78,
+                "end": 90
               }
             },
             "item_type": "function",
-            "length": 8,
-            "docLength": 11
+            "length": 10,
+            "docLength": 12
           },
           {
-            "id": "5c8db3f3-5d38-f68a-5a43-11a315d281dc",
+            "id": "7ccef945-f6d9-4c8b-f24f-958f648c17e4",
             "ancestors": [
-              "c68453fc-8aa1-9c94-4d46-1cb4b3454f73"
+              "421b407c-ba37-419c-e549-a0cb9be22261"
             ],
-            "description": "Counts array elements' occurrences.",
+            "description": "Counts occurrences.",
             "name": null,
             "location": {
-              "start": 78,
-              "insert": 79,
+              "start": 92,
+              "insert": 93,
               "offset": " ",
               "indent": 8,
               "comment": null
             },
             "item_type": "higher_order_invocation",
-            "length": 6,
+            "length": 8,
             "docLength": null
           },
           {
-            "id": "84ac3acb-4238-a8a4-534c-55c6d4b0c330",
+            "id": "d5583b8d-6602-38b0-2948-7b698b7553d1",
             "ancestors": [],
-            "description": "Splits a given sentence into individual words, capitalizes the first character of each word while preserving the rest of the word, and then joins the words back together with spaces to form the original sentence but with capitalized words.",
+            "description": "Capitalizes each word in a given `sentence`, splitting it into individual words, applying the transformation to each word, and then joining them back together with spaces.",
             "params": [
               {
                 "name": "sentence",
                 "default_value": null,
                 "optional": false,
                 "type_name": "string",
-                "description": "Input text to be processed."
+                "description": "Intended for capitalization."
               }
             ],
             "returns": {
               "type_name": "string",
-              "description": "The input sentence with each word capitalized except for its first character, and all words separated by a single space."
+              "description": "The input sentence with all its words capitalized at their first letter and the rest as lowercase."
             },
             "usage": {
               "language": "javascript",
-              "code": "const result = capitalizeWords('hello world');\nalert(result); // \"Hello World\"",
+              "code": "const output = capitalizeWords('hello world');\n",
               "description": ""
             },
             "name": "capitalizeWords",
             "location": {
-              "start": 86,
-              "insert": 86,
+              "start": 102,
+              "insert": 102,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -389,20 +392,20 @@
     "path": "sample.ts",
     "content": {
       "structured": {
-        "description": "Two custom mathematical functions, add and sin, and combines their results into an array. It then renders a list of these results as HTML using React, displaying the result number and value for each calculation. The code uses React's JSX syntax to render an unordered list of calculations performed by the add and sin functions.",
+        "description": "Two custom mathematical functions add and sin, which are then combined into an array. The results are rendered as an unordered list in a React component. The component uses the Math library for sine calculations and React's FC (functional component) type to define the component. The code provides a simple visualization of the calculated values.",
         "items": [
           {
-            "id": "007e0548-2395-3c8a-a24f-4d7ff10ad2d9",
+            "id": "c06de6ce-b643-92b6-5442-21386abdcaad",
             "ancestors": [],
-            "description": "Defines two utility functions, `add` and `sin`, which perform arithmetic operations on numbers. The component then calls these functions with specific arguments to generate an array of results, which are displayed as a list of items within a `<div>` element.",
+            "description": "Defines two custom functions, `add` and `sin`, for basic arithmetic and trigonometric operations. It then uses these functions to generate an array of results and renders them as a list within an HTML element.",
             "params": [],
             "returns": {
-              "type_name": "number | number",
-              "description": "8 and approximately 1.5707963267948966."
+              "type_name": "number",
+              "description": "8 (the sum of 5 and 3) for the first item in the results array and a floating point number near to 1 (the sine of π/2) for the second item."
             },
             "usage": {
               "language": "typescript",
-              "code": "const App = () => {\n    return (\n        <div>\n            <MathComponent />\n        </div>\n    );\n};\n",
+              "code": "const app = <MathComponent />;\nReactDOM.render(app, document.getElementById('root'));\n",
               "description": ""
             },
             "name": "MathComponent",
@@ -421,34 +424,34 @@
             "docLength": 8
           },
           {
-            "id": "ff114781-432c-62b2-c34a-f7c2a6305e36",
+            "id": "7ae5d594-bffd-73b1-8144-52a07302fd4e",
             "ancestors": [
-              "007e0548-2395-3c8a-a24f-4d7ff10ad2d9"
+              "c06de6ce-b643-92b6-5442-21386abdcaad"
             ],
-            "description": "Takes two numeric parameters `a` and `b`, performs an arithmetic addition operation on them, and returns the result as a number. It allows combining two numerical values into one.",
+            "description": "Takes two numeric arguments, `a` and `b`, and returns their sum as an integer value. It is a simple arithmetic operation that combines the values of both inputs into a single output.",
             "params": [
               {
                 "name": "a",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "Used to represent an input value for addition."
+                "description": "Added to another number `b`."
               },
               {
                 "name": "b",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "Intended to be added to `a`."
+                "description": "Added to the value of `a`."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "The result of adding two input numbers together."
+              "description": "The result of the arithmetic operation performed on its input values."
             },
             "usage": {
               "language": "typescript",
-              "code": "let sum: number = add(5, 7);\n",
+              "code": "const sum = add(10, 20);\n",
               "description": ""
             },
             "name": "add",
@@ -464,28 +467,28 @@
             "docLength": null
           },
           {
-            "id": "efcf3ed1-52b6-7493-4f4f-714778a07419",
+            "id": "6a4d5620-528c-b7b5-3547-5591b3aba5a6",
             "ancestors": [
-              "007e0548-2395-3c8a-a24f-4d7ff10ad2d9"
+              "c06de6ce-b643-92b6-5442-21386abdcaad"
             ],
-            "description": "Calculates the sine of a given angle `a` and returns the result as a numerical value. It utilizes the built-in `Math.sin` method to perform the calculation, taking the input `a` as an argument.",
+            "description": "Calculates and returns the sine of a given angle `a` in radians. The result is a numeric value between -1 and 1, representing the trigonometric sine operation.",
             "params": [
               {
                 "name": "a",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "An angle to be used for calculating sine."
+                "description": "An input angle for sine calculation."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "The sine of the given angle."
+              "description": "The sine of the input angle `a`, represented as a mathematical constant in radians."
             },
             "usage": {
               "language": "typescript",
-              "code": "const result = sin(Math.PI / 4);\n",
-              "description": "\n"
+              "code": "const angle = Math.PI / 2;\nconst result = sin(angle);\n",
+              "description": ""
             },
             "name": "sin",
             "location": {

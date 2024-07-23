@@ -1,13 +1,14 @@
 
 /**
- * @description Calculates the factorial of a given positive integer `n`, recursively
- * multiplying it by `n-1` until reaching 0 or 1, at which point it returns 1. The
- * result is the product of all positive integers up to and including `n`.
+ * @description Calculates the factorial of a given integer `n`. It does so by
+ * recursively multiplying `n` with the factorial of `n-1`, until it reaches the base
+ * case of `n === 0` or `n === 1`, at which point it returns 1.
  * 
- * @param {number} n - Intended to calculate the factorial of this number.
+ * @param {number} n - An input value for calculating factorial.
  * 
- * @returns {number} 1 when n equals 0 or 1, and otherwise it returns a product of
- * the input number n with the factorial of (n - 1).
+ * @returns {number} The product of all positive integers from 1 to n. If n is 0 or
+ * 1, it returns 1. For other values of n, it recursively calculates the factorial
+ * as a multiplication of n and the factorial of (n-1).
  */
 function factorial(n) {
     if (n === 0 || n === 1) {
@@ -16,15 +17,15 @@ function factorial(n) {
         return n * factorial(n - 1);
     }
 }
+
 /**
- * @description Determines whether a given number is prime or not. It returns `false`
- * for numbers less than or equal to 1, and iterates from 2 up to the square root of
- * the input number to check if it has any divisors other than 1 and itself.
+ * @description Determines whether a given integer is a prime number or not. It returns
+ * `false` if the input number is less than or equal to 1, and checks for divisibility
+ * up to the square root of the number. If no divisor is found, it returns `true`.
  * 
  * @param {number} num - Being checked for primality.
  * 
- * @returns {boolean} Either `true` if the input number is a prime number or `false`
- * otherwise.
+ * @returns {boolean} `true` if the input number is prime and `false` otherwise.
  */
 function isPrime(num) {
     if (num <= 1) return false;
@@ -35,27 +36,26 @@ function isPrime(num) {
 }
 
 /**
- * @description Converts a given Celsius temperature into Fahrenheit. It takes an
- * input `celsius` and returns the equivalent Fahrenheit value by performing simple
- * arithmetic operations: multiplying by 9, dividing by 5, and adding 32.
+ * @description Converts a temperature from Celsius to Fahrenheit by multiplying the
+ * input value by 9, dividing by 5, and then adding 32.
  * 
- * @param {number} celsius - The temperature to be converted from Celsius.
+ * @param {number} celsius - Temperature value to be converted.
  * 
- * @returns {number} 9/5 times the input celsius temperature plus 32. This result
- * represents the equivalent Fahrenheit temperature.
+ * @returns {number} 9 times the input celsius value divided by 5 and then added to
+ * 32. The result represents the temperature in Fahrenheit scale.
  */
 function celsiusToFahrenheit(celsius) {
     return (celsius * 9 / 5) + 32;
 }
 
 /**
- * @description Identifies and returns the maximum value from a given array. It
- * initializes the variable `max` with the first element of the array, then iterates
- * through the remaining elements to update `max` if any element is greater.
+ * @description Determines the maximum value within an array of numbers by iterating
+ * through each element and comparing it with the current maximum value, updating the
+ * maximum if a larger value is found, until all elements have been checked.
  * 
- * @param {number[]} arr - An array of numbers to find the maximum value from.
+ * @param {number[]} arr - An array to be searched for maximum value.
  * 
- * @returns {number} The largest element from a given array.
+ * @returns {number} The maximum element present in the array.
  */
 function findMax(arr) {
     let max = arr[0];
@@ -68,11 +68,12 @@ function findMax(arr) {
 }
 
 /**
- * @description Splits a given string into an array of characters, reverses the order
- * of these characters, and then joins them back together to form a new string with
- * the original characters in reverse order.
+ * @description Takes a string as input and returns the reversed version of that
+ * string. It does this by splitting the input string into an array of individual
+ * characters, reversing the order of the characters in the array, and then joining
+ * the characters back together into a new string.
  * 
- * @param {string} str - Intended for string reversal.
+ * @param {string} str - Input to be reversed.
  * 
  * @returns {string} The input string with its characters reversed.
  */
@@ -81,63 +82,63 @@ function reverseString(str) {
 }
 
 /**
- * @description Checks if a given string is a palindrome by comparing it with its
- * reversed version, returned by the `reverseString` function. If both strings are
- * identical, the function returns `true`, indicating that the input string is a
- * palindrome. Otherwise, it returns `false`.
+ * @description Checks whether a given string is a palindrome by comparing it with
+ * its reversed version, which is obtained using the `reverseString` function. It
+ * returns a boolean value indicating whether the input string is a palindrome or not.
  * 
- * @param {string} str - Input to be checked for palindrome.
+ * @param {string} str - The input string to be checked for palindrome property.
  * 
- * @returns {boolean} True if the input string is a palindrome and false otherwise,
- * indicating whether the string reads the same backward as forward.
+ * @returns {boolean} True if the input string is equal to its reverse, and false otherwise.
  */
 function isPalindrome(str) {
     return str === reverseString(str);
 }
 
 /**
- * @description Generates a random integer within a specified range defined by `min`
- * and `max`. It calculates the random number using `Math.random()`, scales it to fit
- * within the range, and then adds the minimum value to ensure inclusivity of both boundaries.
+ * @description Generates a random integer within a specified range defined by the
+ * input parameters `min` and `max`. The generated number is inclusive for both bounds,
+ * meaning it can equal either `min` or `max` with an equal probability.
  * 
- * @param {number} min - The minimum value for random generation.
+ * @param {number} min - Inclusive in the generated random range.
  * 
- * @param {number} max - Maximum value for generating random number.
+ * @param {number} max - 1 more than the maximum possible random number value.
  * 
- * @returns {number} A random integer within a range from `min` to `max` inclusive.
+ * @returns {number} A random integer within the range of `min` and `max` inclusive.
  */
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /**
- * @description Calculates the area of a circle given its radius, using the mathematical
- * formula A = πr^2, where r is the radius and A is the area. The result is returned
- * as a value to the caller.
+ * @description Calculates the area of a circle given its radius. It uses the
+ * mathematical formula for the area of a circle (πr^2) and returns the result as a
+ * value.
  * 
- * @param {number} radius - Used to determine the circle's area.
+ * @param {number} radius - Used to calculate the area of a circle.
  * 
- * @returns {number} 2πr where r is the radius of a circle and π is a mathematical
- * constant approximately equal to 3.14159.
+ * @returns {number} The area of a circle calculated using its radius.
  */
 function calculateCircleArea(radius) {
     return Math.PI * radius ** 2;
 }
 
 /**
- * @description Takes an array as input and returns an object where each property is
- * a unique element from the array, and its value is the number of times that element
- * occurs in the array.
+ * @description Aggregates the occurrences of each element in an array by using the
+ * `reduce` method to create a new object with the elements as keys and their respective
+ * counts as values.
  * 
- * @param {(string | number | boolean | symbol | object | null | undefined)[]} arr -
- * Intended to hold an array of values.
+ * @param {(string | number | boolean | object | symbol)[]} arr - An array to count
+ * occurrences in.
  * 
- * @returns {any} An object where keys are elements from the input array and values
- * represent their occurrences in the array.
+ * @returns {any} An object where each property represents a unique value from the
+ * input array and its corresponding property value is the number of occurrences of
+ * that value in the array.
  */
 function countOccurrences(arr) {
     return arr.reduce((acc, val) => {
-        // Counts array elements' occurrences.
+        // Counts occurrences.
+
+        // Counts occurrences in an array.
 
         // Counts occurrences.
 
@@ -147,15 +148,14 @@ function countOccurrences(arr) {
 }
 
 /**
- * @description Splits a given sentence into individual words, capitalizes the first
- * character of each word while preserving the rest of the word, and then joins the
- * words back together with spaces to form the original sentence but with capitalized
- * words.
+ * @description Capitalizes each word in a given `sentence`, splitting it into
+ * individual words, applying the transformation to each word, and then joining them
+ * back together with spaces.
  * 
- * @param {string} sentence - Input text to be processed.
+ * @param {string} sentence - Intended for capitalization.
  * 
- * @returns {string} The input sentence with each word capitalized except for its
- * first character, and all words separated by a single space.
+ * @returns {string} The input sentence with all its words capitalized at their first
+ * letter and the rest as lowercase.
  */
 function capitalizeWords(sentence) {
     return sentence.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
