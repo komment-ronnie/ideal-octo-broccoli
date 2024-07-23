@@ -6,16 +6,7 @@ function factorial(n) {
         return n * factorial(n - 1);
     }
 }
-/**
- * @description Determines whether a given number is prime or not. It checks divisibility
- * from 2 to the square root of the number and returns `true` if it's not divisible
- * by any of these numbers, indicating that the number is prime; otherwise, it returns
- * `false`.
- * 
- * @param {number} num - The number to be checked for primality.
- * 
- * @returns {boolean} `true` if the input number is a prime number and `false` otherwise.
- */
+
 function isPrime(num) {
     if (num <= 1) return false;
     for (let i = 2; i <= Math.sqrt(num); i++) {
