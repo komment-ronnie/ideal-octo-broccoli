@@ -1,0 +1,35 @@
+[
+  {
+    "name": "file.js",
+    "path": "file.js",
+    "content": {
+      "structured": {
+        "description": "A constant function named fn that returns no value and immediately logs 0 to the console using the console.log method provided by the browser's JavaScript engine. The function does not take any arguments. The const keyword is used to declare a constant, which cannot be reassigned once declared.",
+        "items": [
+          {
+            "id": "3790894d-7624-bcbf-364c-fb638ba5bce3",
+            "ancestors": [],
+            "description": "Declares a constant named function that takes no arguments and logs the value `0` to the console using `console.log`. The function is defined as a constant, meaning its behavior cannot be changed after it's declared.",
+            "params": [],
+            "usage": {
+              "language": "javascript",
+              "code": "fn();\n",
+              "description": ""
+            },
+            "name": "fn",
+            "location": {
+              "start": 1,
+              "insert": 1,
+              "offset": " ",
+              "indent": 0,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 8,
+            "docLength": null
+          }
+        ]
+      }
+    }
+  }
+]
