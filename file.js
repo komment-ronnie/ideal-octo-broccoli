@@ -1,15 +1,4 @@
 
-/**
- * @description Calculates the factorial of a given integer `n`. It recursively
- * multiplies `n` by the factorial of `n-1`, stopping when `n` reaches 0 or 1, at
- * which point it returns 1. The result is the product of all positive integers up
- * to and including `n`.
- * 
- * @param {number} n - 0-based input to calculate factorial.
- * 
- * @returns {number} The product of all positive integers that are smaller than or
- * equal to the input number `n`, starting with 1 and ending with `n`.
- */
 function factorial(n) {
     if (n === 0 || n === 1) {
         return 1;
