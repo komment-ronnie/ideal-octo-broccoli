@@ -4,34 +4,34 @@
     "path": "file.js",
     "content": {
       "structured": {
-        "description": "Various utility functions that perform mathematical operations, string manipulation, and data processing tasks. The `factorial` function calculates the factorial of a given number, while `isPrime` checks if a number is prime. The `celsiusToFahrenheit` function converts temperature from Celsius to Fahrenheit.",
+        "description": "Several functions that perform various mathematical and string manipulations. It includes implementations for calculating factorials, checking primality, converting temperatures, finding maximum values in arrays, reversing strings, determining palindromes, generating random numbers, calculating circle areas, counting occurrences of elements in arrays, and capitalizing words.",
         "items": [
           {
-            "id": "0beaa4e3-578c-a791-314e-dffb9b95f977",
+            "id": "3269cf33-a8da-26a5-cb4a-352aeb79acfa",
             "ancestors": [],
-            "description": "Calculates the factorial of a given integer `n`. It recursively multiplies `n` by the factorial of `n-1`, until it reaches the base case where `n` is 0 or 1, at which point it returns 1. The result is the product of all positive integers less than or equal to `n`.",
+            "description": "Calculates the factorial of a given integer `n`. It recursively multiplies `n` by the factorial of `n-1`, stopping when `n` reaches 0 or 1, at which point it returns 1. The result is the product of all positive integers up to and including `n`.",
             "params": [
               {
                 "name": "n",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "The input value to calculate its factorial."
+                "description": "0-based input to calculate factorial."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "0-based factorial of the input integer. The returned value represents the product of all positive integers from 1 to the input integer."
+              "description": "The product of all positive integers that are smaller than or equal to the input number `n`, starting with 1 and ending with `n`."
             },
             "usage": {
               "language": "javascript",
-              "code": "var result = factorial(4);\n",
-              "description": ""
+              "code": "var result = factorial(5);\n",
+              "description": "\nThis code calculates the value of the factorial of number 5."
             },
             "name": "factorial",
             "location": {
-              "start": 1,
-              "insert": 1,
+              "start": 2,
+              "insert": 2,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -41,31 +41,31 @@
             "docLength": null
           },
           {
-            "id": "e6ce16c1-2cbe-1d89-5e43-5577553c4ec6",
+            "id": "6e2f4142-a093-748a-6c4c-823a99dae22f",
             "ancestors": [],
-            "description": "Determines whether a given number is prime or not. It checks divisibility from 2 to the square root of the number and returns `true` if it's not divisible by any of these numbers, indicating that the number is prime; otherwise, it returns `false`.",
+            "description": "Determines whether a given number is prime or not. It checks divisibility of the input number by all numbers up to its square root. If any such divisor exists, it returns `false`, indicating the number is not prime; otherwise, it returns `true`.",
             "params": [
               {
                 "name": "num",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number",
-                "description": "The number to be checked for primality."
+                "description": "Intended to be tested for primality."
               }
             ],
             "returns": {
               "type_name": "boolean",
-              "description": "`true` if the input number is a prime number and `false` otherwise."
+              "description": "Either `true` if the input number is a prime number and `false` otherwise."
             },
             "usage": {
               "language": "javascript",
-              "code": "let num = 5;\nif (isPrime(num)) {\n    // num is prime\n} else {\n    // num is not prime\n}\n",
+              "code": "let number = 11;\nif (isPrime(number)) {\n    // The number is prime\n} else {\n    // The number is not prime\n}\n",
               "description": ""
             },
             "name": "isPrime",
             "location": {
-              "start": 8,
-              "insert": 8,
+              "start": 10,
+              "insert": 10,
               "offset": " ",
               "indent": 0,
               "comment": null
@@ -75,89 +75,95 @@
             "docLength": null
           },
           {
-            "id": "48b12469-c7fd-1ba1-e546-15a0f1016793",
+            "id": "1705ffa4-bf7d-eda1-e945-2b7715262156",
             "ancestors": [],
-            "description": "Iterates through an array, identifying and storing the largest element. It initializes `max` with the first array element and updates it if a larger value is found. The function returns the maximum value upon completion of the iteration.",
+            "description": "Determines and returns the maximum value from an array of numbers. It iterates through the array, comparing each element to a variable initialized with the first element's value, updating the variable if a larger value is found.",
             "params": [
               {
                 "name": "arr",
                 "default_value": null,
                 "optional": false,
                 "type_name": "number[]",
-                "description": "Used to find the maximum element in an array."
+                "description": "An input array to find the maximum value from."
               }
             ],
             "returns": {
               "type_name": "number",
-              "description": "The maximum element found in the input array."
+              "description": "The largest element present in the input array."
             },
             "usage": {
               "language": "javascript",
-              "code": "let numbers = [1, 3, 4, 2, 5];\nlet result = findMax(numbers);\n",
+              "code": "const numbers = [1, 2, 3, 4, 5];\nlet max = findMax(numbers);\n",
               "description": ""
             },
             "name": "findMax",
             "location": {
-              "start": 20,
-              "insert": 20,
+              "start": 31,
+              "insert": 22,
               "offset": " ",
               "indent": 0,
-              "comment": null
+              "comment": {
+                "start": 21,
+                "end": 30
+              }
             },
             "item_type": "function",
             "length": 9,
-            "docLength": null
+            "docLength": 9
           },
           {
-            "id": "ee78dd39-ab0a-77b7-f749-1c52c7395584",
+            "id": "238379fc-4730-cea9-7c46-2099731b2342",
             "ancestors": [],
-            "description": "Counts the occurrences of each element in an array and returns a new object with elements as keys and their corresponding frequencies as values. It uses the `reduce` method to accumulate the count for each unique value in the array.",
+            "description": "Counts the occurrences of each element in the input array and returns an object with keys as unique elements from the array and values as their respective counts.",
             "params": [
               {
                 "name": "arr",
                 "default_value": null,
                 "optional": false,
-                "type_name": "(string | number | object | etc.)[]",
-                "description": "An array to be processed."
+                "type_name": "(string | number | bigint | symbol | object | function | undefined | null)[]",
+                "description": "An array to count occurrences."
               }
             ],
             "returns": {
               "type_name": "any",
-              "description": "An object where each property represents a unique element from the input array and its corresponding value is the count of occurrences of that element in the array."
+              "description": "An object where each property key is a unique value from the input array and its corresponding property value represents the frequency or count of that value in the array."
             },
             "usage": {
               "language": "javascript",
-              "code": "let numbers = [1, 2, 3, 2, 4];\nlet occurrences = countOccurrences(numbers);\n",
+              "code": "var result = countOccurrences(['a', 'b', 'c', 'a', 'b']);\n",
               "description": ""
             },
             "name": "countOccurrences",
             "location": {
-              "start": 46,
-              "insert": 46,
+              "start": 68,
+              "insert": 57,
               "offset": " ",
               "indent": 0,
-              "comment": null
+              "comment": {
+                "start": 56,
+                "end": 67
+              }
             },
             "item_type": "function",
-            "length": 6,
-            "docLength": null
+            "length": 8,
+            "docLength": 11
           },
           {
-            "id": "39677c57-4946-7688-4842-ae4a91720482",
+            "id": "059ebe84-0877-f488-b144-bc229ac90402",
             "ancestors": [
-              "ee78dd39-ab0a-77b7-f749-1c52c7395584"
+              "238379fc-4730-cea9-7c46-2099731b2342"
             ],
-            "description": "Counts occurrences.",
+            "description": "Counts occurrences in an array.",
             "name": null,
             "location": {
-              "start": 47,
-              "insert": 48,
+              "start": 69,
+              "insert": 70,
               "offset": " ",
               "indent": 8,
               "comment": null
             },
             "item_type": "higher_order_invocation",
-            "length": 4,
+            "length": 6,
             "docLength": null
           }
         ]
