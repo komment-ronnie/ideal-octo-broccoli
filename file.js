@@ -1,4 +1,15 @@
 
+/**
+ * @description Calculates the factorial of a given non-negative integer `n`. It
+ * returns the product of all positive integers from 1 to `n`, recursively multiplying
+ * each number by the result of the factorial of the previous number.
+ * 
+ * @param {number} n - 0 or positive integer, representing a number to calculate
+ * factorial for.
+ * 
+ * @returns {number} The result of multiplying all positive integers up to the input
+ * number together, starting from 1.
+ */
 function factorial(n) {
     if (n === 0 || n === 1) {
         return 1;
@@ -8,15 +19,14 @@ function factorial(n) {
 }
 
 /**
- * @description Determines whether a given number is prime or not. It checks divisibility
- * of the input number by all numbers up to its square root. If any such divisor
- * exists, it returns `false`, indicating the number is not prime; otherwise, it
- * returns `true`.
+ * @description Determines whether a given integer is prime or not. It returns `false`
+ * for numbers less than or equal to 1 and checks divisibility from 2 up to the square
+ * root of the number. If no divisors are found, it returns `true`, indicating the
+ * number is prime.
  * 
- * @param {number} num - Intended to be tested for primality.
+ * @param {number} num - Tested for primality.
  * 
- * @returns {boolean} Either `true` if the input number is a prime number and `false`
- * otherwise.
+ * @returns {boolean} `true` if the input number is a prime number and `false` otherwise.
  */
 function isPrime(num) {
     if (num <= 1) return false;
@@ -31,13 +41,13 @@ function celsiusToFahrenheit(celsius) {
 }
 
 /**
- * @description Determines and returns the maximum value from an array of numbers.
- * It iterates through the array, comparing each element to a variable initialized
- * with the first element's value, updating the variable if a larger value is found.
+ * @description Identifies and returns the largest element from an array of numbers,
+ * starting with the first element as the initial maximum value and updating it if a
+ * larger element is found during the iteration.
  * 
- * @param {number[]} arr - An input array to find the maximum value from.
+ * @param {number[]} arr - An input array.
  * 
- * @returns {number} The largest element present in the input array.
+ * @returns {number} The maximum element found within the input array.
  */
 function findMax(arr) {
     let max = arr[0];
@@ -66,19 +76,21 @@ function calculateCircleArea(radius) {
 }
 
 /**
- * @description Counts the occurrences of each element in the input array and returns
- * an object with keys as unique elements from the array and values as their respective
- * counts.
+ * @description Aggregates the occurrences of each element in an array, returning an
+ * object where the property names are the elements and their values are the counts
+ * of each occurrence. The function uses the `reduce` method to achieve this.
  * 
- * @param {(string | number | bigint | symbol | object | function | undefined |
- * null)[]} arr - An array to count occurrences.
+ * @param {(string | number | boolean | symbol | object | null | undefined)[]} arr -
+ * An array of values to be counted.
  * 
- * @returns {any} An object where each property key is a unique value from the input
- * array and its corresponding property value represents the frequency or count of
- * that value in the array.
+ * @returns {any} An object where each key corresponds to a unique element from the
+ * input array and its corresponding value represents the frequency of that element
+ * in the array.
  */
 function countOccurrences(arr) {
     return arr.reduce((acc, val) => {
+        // Counts elements in an array.
+
         // Counts occurrences in an array.
 
         // Counts occurrences.
