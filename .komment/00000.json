@@ -163,5 +163,42 @@
         ]
       }
     }
+  },
+  {
+    "name": "sample.ts",
+    "path": "sample.ts",
+    "content": {
+      "structured": {
+        "description": "A React functional component named MathComponent that renders a list of mathematical results using two custom functions add and sin. The add function adds two numbers together, while the sin function calculates the sine of a given angle in radians. The results are displayed as an unordered list with each result labeled with its index.",
+        "items": [
+          {
+            "id": "3dacc4ab-6b84-49af-3f44-99aa92fd7837",
+            "ancestors": [],
+            "description": "Defines two custom mathematical functions, `add` and `sin`, and combines their results into an array. It then renders a list of these results as HTML, displaying the result number and value for each calculation.",
+            "params": [],
+            "returns": {
+              "type_name": "number | number",
+              "description": "An array of two numbers representing the results of mathematical operations."
+            },
+            "usage": {
+              "language": "typescript",
+              "code": "function main(): void {\n    ReactDOM.render(<MathComponent />, document.getElementById('root'));\n}\n",
+              "description": "\n"
+            },
+            "name": "MathComponent",
+            "location": {
+              "start": 2,
+              "insert": 2,
+              "offset": " ",
+              "indent": 0,
+              "comment": null
+            },
+            "item_type": "function",
+            "length": 22,
+            "docLength": null
+          }
+        ]
+      }
+    }
   }
 ]
